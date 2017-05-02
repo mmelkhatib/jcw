@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>John Carroll Weekend 2017</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script src="../assets/js/jquery.mobile-1.4.5.js"></script>
+<script src="../assets/js/jquery-3.0.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="../assets/js/html5shiv.js"></script>
+<script src="../assets/js/jquery.mobile-1.1.1.min.js"></script>
+<script src="../assets/js/jquery-1.8.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="../assets/css/main.css"><link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css">
+<meta property="og:title" content="John Carroll Weekend 2017"/>
+<meta property="og:image" content="http://jcw.georgetown.edu/2017/ui/img/bg1.jpg"/>
+<meta property="og:site_name" content="John Carroll Weekend 2017" />
+<meta property="og:description" content="Join Georgetown April 14-17, 2017, as we say 'Buongiorno!' to the Eternal City at John Carroll Weekend Rome. This beloved and exciting annual event welcomes alumni from around the globe for four days of social, cultural and intellectual engagement that will make the most of Rome's history, beauty, world-famous art and architecture."/>
+<script>
+		fixup = function(){
+			winH = function(){return $(window).height();}
+			winW = function(){return $(window).width();}
+			ssH = function(){return $("#bgSS").height();}
+			ssW = function(){return $("#bgSS").width();}
+			imgH = function(){return $("#bgSS").children("img").height();}
+			imgW = function(){return $("#bgSS").children("img").width();}
+			mW = function(){return $("#menu").width();}
+			if(imgW() < ssW()){
+			console.log("image is too narrow");
+			$("#bgSS").children("img").css({'width':'100%','height':'auto'})
+			}
+			if(imgH() < ssH()){
+			console.log("image is too short");
+			$("#bgSS").children("img").css({'height':'100%','width':'auto'})
+			}
+			if(mW() + ssW() < winW()){
+			console.log("Gap!")	
+			/*$("#content").width(winW - mW)*/
+			$("#content").width(winW())
+			}
+			if(ssW() > winW() - mW()){
+			console.log("Overlap!");
+			/*$("#content").width(winW - mW);*/
+			$("#content").width(winW());
+			}
+			$("#bgSS img").css({
+				'position':'absolute',
+				'left':(-(imgW()-ssW())*.5),
+				'top':($(window).height()*.5)-($("#bgSS img").height()*.5)+'px'			
+				});	
+		}
+
+$(window).load(function(){
+	  setTimeout(function(){
+    // Hide the address bar!
+    window.scrollTo(0, 1);
+  }, 0);
+
+	winH = function(){return $(window).height();}
+	winW = function(){return $(window).width();}
+	ssH = function(){return $("#bgSS").height();}
+	ssW = function(){return $("#bgSS").width();}
+	imgH = function(){return $("#bgSS").children("img").height();}
+	imgW = function(){return $("#bgSS").children("img").width();}
+	mW = function(){return $("#menu").width();}
+	fixGap = function(){$("#content").width(winW());}
+	fixOverlap = function(){$("#content").width(winW());}
+	fixWidth = function(){$("#bgSS").children("img").css({'width':'100%','height':'auto'}); if(imgW() == ssW()){return true};}
+	fixHeight = function(){$("#bgSS").children("img").css({'height':'100%','width':'auto'}); if(imgH() == ssH()){return true};}
+	
+	winR = function(){
+		var heightCk = imgH()==ssH();
+		var widthCk = imgW()==ssW();
+		if(!heightCk){
+			if(imgH()<ssH()){
+			console.log("img shorter");
+			//fixWidth();
+			}else if(imgH()>ssH()){
+			console.log("img taller");
+			//fixHeight();
+			}
+		}else{
+			if(!widthCk){
+				if(imgW()<ssW()){
+					console.log("img narrow");
+					fixWidth();
+				}else if(imgW()>ssW()){
+					console.log("img wide");
+				};	
+			}
+		}
+	};
+	gapD = function(){
+		var contentsW = mW()+ssW();
+	}
+	console.log("startup: imgW:"+imgW()+" ssW:"+ssW()+"\nimgH:"+imgH()+" ssH:"+ssH());
+	winR(); 
+	$("#bgSS img").css({
+	'position':'absolute',
+	'left':(-(imgW()-ssW())/2),
+	'top':($(window).height()*.5)-($("#bgSS img").height()*.5)+'px'
+	});
+	console.log("ssH="+((ssH()*.5)-(imgH()*.5))+", window.height="+(($(window).height()*.5)-($("#bgSS img").height()*.5)));
+	rotation = ["ui/img/bg2.jpg", "ui/img/bg3.jpg","ui/img/bg1.jpg"];	rotate = function(){
+		currentSlide = {'url':$("#bgSS img").eq(0).attr("src"),'ind':''};
+		if(currentSlide){
+			//console.log(rotation[currentSlide])
+			$(rotation).each(function(index, value){
+				if(value == currentSlide.url){
+					currentSlide.ind = index;
+					console.log(index);
+					if(index < rotation.length-1){	
+						console.log("index less than length");
+						stylize = function(){
+							sty = $("#bgSS img").eq(0).attr('style');
+							return sty;
+						}
+						console.log(stylize())
+							$("#bgSS img").eq(0).after("<img src="+rotation[index+1]+' style="position:absolute; width:'+$("#bgSS img").eq(0).css('width')+'; height:'+$("#bgSS img").eq(0).css('height')+'">');
+							//$("#bgSS img").eq(1).attr('style', stylize());
+							fixup();
+							$("#bgSS img").eq(0).css({'position':'absolute', 'z-index':'1'}).fadeOut(3000, function(e){$(this).remove();});
+							
+						}else{
+							index = 0;
+							stylize = function(){
+								sty = $("#bgSS img").eq(0).attr('style');
+								return sty;
+							}
+							$("#bgSS img").eq(0).after("<img src="+rotation[index]+' style="position:absolute; width:'+$("#bgSS img").eq(0).css('width')+'; height:'+$("#bgSS img").eq(0).css('height')+'">');
+							fixup();
+							//$("#bgSS img").eq(1).attr('style', stylize());
+							$("#bgSS img").eq(0).css({'position':'absolute', 'z-index':'1'}).fadeOut(3000, function(e){$(this).remove();});
+							
+					};
+				}
+				});
+		}
+	};setInterval(rotate, 7500);
+	});
+$(document).ready(function(){
+	var dmq = window.matchMedia("screen and (max-width:480px)");
+	if(dmq.matches){
+		//MOBILE POPUP	
+		popup = function(){
+			$("#introBox").dialog({modal:true, width:"85%", minHeight:"400px", close: function(event, ui){
+			  }, show: "slide"}).find('iframe').css({width:'90%', height:'auto'});
+		};popup();	
+	}else{
+		//DESKTOP POPUP
+		popup = function(){
+			$("#introBox").dialog({modal:false, width:"600px", minHeight:"400px", close: function(event, ui){
+			  }, show: "slide"});
+		};popup();	
+	}
+		
+		//Mobile
+		if (matchMedia) {  
+			var mq = window.matchMedia("screen and (max-width:800px)");  
+			mq.addListener(mobileFriendly);  
+			mobileFriendly(mq);
+		}  
+		// media query change  
+		function mobileFriendly(mq) {  
+			if (mq.matches) {  
+				console.log("less than 800px");
+				$("ul.horizMenu").children("li").eq(0).before("<li id='menuTitle'><img src='../assets/img/btnMenu3.png' id='menuBtn' alt='Menu Button'></li>")
+				//$("ul.horizMenu").children("li").css({'position':'relative'})
+				$("ul.horizMenu li#menuTitle").toggle(function(){
+						$("#topNav").animate({
+							'height':$("#topNav .horizMenu li").length*40
+							});
+						//$("#topNav").css({'overflow':'visible'})
+					},function(){
+						$("#topNav").animate({
+							'height':'40px'
+							});
+						//$("#topNav").css({'overflow':'hidden'})
+					});
+				$("#bgSS").css({"display": "none"});
+			}  
+			else {  
+				console.log("greater than 800px") 
+				$("#bgSS").css({"display": "block"}); 
+				$("#menuTitle").remove();
+				if(parseInt($("#topNav").css('height'))>40){
+						$("#topNav").animate({
+							'height':'40px'
+							});
+				}
+			}  
+		}  
+	
+
+	
+	});
+</script>
+<script type="text/javascript" src="//use.typekit.net/xrm4bqk.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src="../assets/js/html5shiv.js"></script>
+<!--[if lt IE 9]>
+<script src="../assets/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../assets/css/main-ie.css" />
+<![endif]-->
+<style>
+img.story-pic{background: #000;}
+img.hiddenBg {display:none;}
+div.wBG {display:none;}
+.medBlue {color:#6caddf;}
+.alignCenter {text-align:center;}
+.alignRight {text-align:right;}
+
+.home .horizMenu li {width:33.3%;}
+.regBtn {font-size:16px;}
+.this-story img{display:none;}
+.utility-wrap{background: #002147;}
+.utility-wrap{position:relative !important;}
+.flyout-comments, .flyout-share, .flyout-feedback{display:none;}
+.utility-bar{width:auto;}
+.ui-chunky-btn.icon.send{background: #002147; border-color: #002147;}
+.flyout-feedback textarea,.flyout-feedback input{width:272px;margin:0 15px;padding:8px;margin-bottom:5px;background:#f3f3f3;border:1px solid #fff;border-top-color:#c4c4c4;border-radius:3px;box-shadow:inset 0 0 1px rgba(0,0,0,.3);color:#999;display:block;font-size:11px;outline:0}
+.flyout-feedback input:focus,.flyout-feedback textarea:focus{color:#000}.flyout-feedback textarea{height:65px; margin-bottom:10px;}
+.feedback-module .utility-flyout::before{left: 75px;}
+.flyout-feedback .cta{background:#f2f2f2 url(static/images/components/utility-contribute-sprite.png) repeat-x 0 -80px;box-shadow:inset 0 1px 1px rgba(0,0,0,.2);padding:20px 15px;text-align:center}.flyout-feedback .cta .ui-chunky-btn.secondary{margin-right:15px}
+.email-pane iframe {border:none;}
+.ui-dialog {border:5px solid #002147; z-index:2; background: rgba(255,255,255,.85);}
+.ui-dialog-titlebar {background: none; border: none; margin:0px; padding: 0px!important; float:right;}
+.ui-dialog-content {padding:0 0 1em!important;}
+.ui-dialog h1 {font-size: 1.6em; color: #002147;text-align:center; text-transform:uppercase;}
+.ui-dialog p {font-size:14px; margin-top:1em; color: #002147; line-height:1.3em;}
+.ui-dialog ul li {font-size: 14px; padding-bottom:5px; color:#002147;margin-left: 1em;
+text-indent: -1em;}
+.ui-dialog-buttonset {float:none!important; }
+.ui-dialog .ui-dialog-buttonpane button{display:block; margin:0 auto; padding:0;}
+.ui-button-icon-only .ui-icon-closethick {top:0px!important; left:0;}
+.ui-button-text-only .ui-button-text {margin:0; padding:0 1em;}
+.ui-dialog .ui-dialog-buttonpane {border:none; margin:0;}
+.ui-dialog .ui-dialog-titlebar-close span {margin:0px;}
+.ui-state-focus { outline: none; }
+.ui-widget-overlay {display:none;}
+<!--#bgSS img {width:100%; height:100%;}-->
+#introBox {margin:1em;}
+#introBox img {float:left; padding:0 15px 10px 0; width: 200px;}
+#introBox p{float:left;}
+#introBox p.callout {font-size:16px; width:100%; text-align:center;}
+#introBox h3 {font-size:18px; margin-bottom:1em; text-align:center;}
+#introBox iframe {margin:0 auto; min-width:320px; display:block;}
+#time {font-size: 1.2em; color:red;}
+#time .cd-time {color:#002147;}
+#primaryNav {display:none;}
+#primaryNav ul hr {margin:0 0 1em;}
+#btmNav {padding:12px 0 0; height:30px!important; text-align:center;}
+#btmNav ul li {float:left;}
+#guaa-top, .mobile-link {display:none;}
+#register-deadline-mobile {color:#6caddf; position:relative; top:1em; font-size:14px; display:none;}
+#guaa-top {position:relative; text-align:center; padding-top:12px;}
+#topNav {width:100%;padding:0 20%;}
+/*hotel styles*/
+#booking {width:100%; height: 100vh; top:100vh; background-color:#FFF; position:relative;z-index:3;}
+table, .rooms {width:100%; margin: 20px auto 10px;}
+table {border-spacing:0;}
+.hotel {width:90%;font-family:sans-serif; padding:5%;}
+.hotel img { width: 100%}
+.hotel .hotelname {text-align:center; margin:1em 0 .5em; clear:both;}
+.hotel .hotelname a {text-decoration:none; color:#FFF; transition:color .2s;}
+.hotel .hotelname a:hover {text-decoration:underline; color:#00F;}
+.hotel .hoteladdress {text-align:center; width:80%; margin:0 auto;}
+.hotel .hoteladdress dd {padding:5px 10px; margin-left:0; color:#002d62;}
+.hotel .hoteladdress .left {float:right;}
+.hotel .reservations {width:80%; margin:1.5em auto; text-align:center;}
+.hotel .rooms {width:80%; margin:0 auto; /*border:1px solid #EFEFEF;*/}
+.hotel .rooms tr {padding:0 0;}
+.hotel .rooms td {/*border:1px solid #EFEFEF;*/padding:5px;margin-right:0;}
+.hotel small {display:block; margin:1em auto; font-size:10px; text-align:center; width:80%;}
+.hotel p {width:80%; clear:both; margin:1em auto; color:#002d62;}
+.white-text {color:white;}
+.gu-blue-bg {background-color:#002d62;} 
+.hotel-box {width:50%;float:left; position:relative; margin:0;height:600px; background-color:white;}
+.hotel-image img {width:100%;height:100%;}
+.hotel-image h1 {position:absolute; bottom:10px; left:10px; color:#1acfff;}
+
+.horizMenu {width:60%;}
+
+@media screen and (max-width:1024px){
+	#logo {width:65%; margin-bottom:0!important;}
+	#primaryNav ul hr {margin:0 0 .3em;}
+	#register-deadline-mobile {font-size:16px;}
+	#register-deadline-mobile, .mobile-link {display:block;}
+}
+@media screen and (max-width: 800px) {
+	.hotel-box {width:100%;}
+	#register-deadline-mobile {font-size:22px;}
+	#guaa-top{display:block;}
+	#guaa-top img {height:20px;}
+	#topNav .horizMenu, #btmNav {display:none;}
+	#primaryNav {display:block;}
+	.home section#menu nav#primaryNav ul li{
+		width: 100%;
+    	float: left;
+    	line-height: 24px;
+	}
+	.hotel-box, .hotel-image {height:auto;}
+}
+@media screen and (max-width:480px){
+	.ui-dialog{top:45px !important;}
+	.ui-dialog ul {margin-left: 2px; margin-top:0;}
+	.ui-dialog .ui-dialog-buttonpane {padding:.5em 0!important;}
+	#introBox p{float:left; width:100%;}
+	#introBox p img{float:left; width:100%; margin:0 auto;}
+	#introBox iframe {margin:0 auto; min-width:240px; display:block;}
+}
+
+#main {
+    width: 100%;
+	z-index:2;}
+#menu {
+	width: 100%;}
+</style>
+
+<link rel="icon" 
+      type="image/gif" 
+      href="../assets/img/GUfavicon.gif" /> 
+</head>
+<body class="home"> 
+<section id="main" style="width:100%;">
+	<nav id="topNav">
+        <ul class="horizMenu">
+           <li><a href="index.html">Home</a></li>
+        <li><a href="#booking">Hotels</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <p id="guaa-top"><img alt="Georgetown University Alumni Association" src="../assets/img/GUAA_H_white.png"></p>
+	</nav>
+	<section id="menu" style="width:100%;"><div class="wBG"></div>
+     <div class="innerPad" style="padding-top:0px; padding-bottom:200px; width:60%;margin:15% 20%;">
+     	<img id="logo" src="ui/img/JCW-Austin-logo-draft.png">
+    	
+           <nav id="primaryNav">
+                <ul>
+                    <hr style="height: 5px; border: none; background: #002147;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#booking">Hotels</a></li>
+            		<li><a href="contact.html">Contact Us</a></li>
+                     
+                </ul>
+            </nav>
+        	<div id="badge"><a href="#booking"><img width="150" src="ui/img/std-btn.png"></a></div>
+		 </div>
+	</section>
+    
+    <section id="content">
+           
+        <div id="bgSS">
+        <img src="ui/img/bg1.jpg">
+        <!--Hidden bg images-->
+        <img class="hiddenBg" src="ui/img/bg1.jpg">
+        <img class="hiddenBg" src="ui/img/bg2.jpg"> 
+        <img class="hiddenBg" src="ui/img/bg3.jpg">
+        
+        </div>
+    
+    </section>
+    <div id="GUAA"><p><img width="175px" src="../assets/img/GUAA-logo-white.png"></p></div>
+</section>
+<div id="booking">
+	<div class="hotel-box hotel-image">
+    	<h1>Four Seasons Hotel</h1>
+        <img src="ui/img/four-seasons-hotel.JPG">
+    </div>
+    <div class="hotel-box hotel-details">
+    	<div class="hotel">
+            <h1 class="hotelname"><strong>Four Seasons Hotel Austin</strong></h1>
+            <dl class="hoteladdress">
+              <dd>98 San Jacinto Boulevard </dd>
+                <dd>78701-4039 Austin, U.S.A.</dd>
+                <dd>Phone: <a href="tel:5124784500">(512) 478-4500</a></dd>
+                
+            </dl>
+            <div class="reservations">
+                <p><strong>Cutoff Date: May 20, 2017</strong></p>
+                <p><strong>Reservation Number:</strong> 1 (512) 685-8100; code John Carroll Weekend, Austin 2017</p>
+                <p><strong>Reservation Link: </strong> <a target="_blank" href="http://www.fourseasons.com/austin/john-carroll-weekend-austin-2017/">fourseasons.com/austin/john-carroll-weekend-austin-2017/</a></p>
+    		</div>
+            <table class="rooms">
+                <tbody>
+                    <tr class="gu-blue-bg white-text">
+                        <td><strong>Room Type</strong></td>
+                        <td><strong>Single</strong></td>
+                        <td><strong>Double</strong></td>
+                    </tr>
+                    <tr>
+                        <td>City View King</td>
+                        <td>$395</td>
+                        <td>$395</td>
+                    </tr>
+                    <tr>
+                        <td>Lake View King</td>
+                        <td>$465</td>
+                        <td>$465</td>
+                    </tr>
+                    <tr>
+                        <td>Double Bed Room</td>
+                        <td>$465</td>
+                        <td>$465</td>
+                    </tr>
+                    <tr>
+                        <td>Executive Suite</td>
+                        <td>$665</td>
+                        <td>$665</td>
+                    </tr>
+                    <tr>
+                        <td>One Bedroom Lake View Suite</td>
+                        <td>$1,200</td>
+                        <td>$1,200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div style="float:right;" class="hotel-box hotel-image">
+        <h1>The Westin Downtown Austin</h1>
+        <img src="ui/img/westin-downtown-austin.jpg">
+    </div>
+    <div class="hotel-box hotel-details">
+        <div class="hotel">
+            <h1 class="hotelname">The Westin Downtown Austin</h1>
+                <dl class="hoteladdress">
+                    <dd>310 East 5th Street </dd>
+                    <dd>Austin, TX 78701</dd>
+                    <dd>Phone: <a href="tel:5123912333">(512) 391-2333</a></dd>
+                </dl>
+                <div class="reservations">
+                    <p><strong>Cutoff Date: 5:00 PM, Central Standard Time, March 20, 2017</strong></p>
+                    <p><strong>Reservation Link: </strong> <a target="_blank" href="https://www.starwoodmeeting.com/Book/GeorgetownU">starwoodmeeting.com/Book/GeorgetownU</a></p>
+        </p>
+                </div>
+                <table class="rooms">
+                    <tbody>
+                        <tr class="gu-blue-bg white-text">
+                            <td><strong>Room Type</strong></td>
+                            <td><strong>Single Rate</strong></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Traditional Single/Double</td>
+                            <td>$359</td>
+                        </tr>
+                        <tr>
+                            <td>Traditional Triple/Quad</td>
+                            <td>$379</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+//print page
+function printpage()
+{ 
+window.print();
+}
+
+
+$(document).ready(function() {
+	
+	//show and hide comment module
+   $('.comment-module .btn').click(function(){
+     $('.flyout-comments').css({"top":"auto", "bottom":"50px", "display": "block"});
+	 $('.flyout-share').css({"display": "none"});
+	 $('.flyout-feedback').css({"display":"none"});
+   });
+   $('.comment-module .ribbon').click(function(){
+     $('.flyout-comments').css({"display": "none"});
+	 
+   });
+   
+   //show and hide share module
+   $('.share-module .btn').click(function(){
+     $('.flyout-share').css({"top":"auto", "bottom":"50px", "display": "block"});
+	 $('.flyout-comments').css({"display": "none"});
+	 $('.flyout-feedback').css({"display":"none"});
+   });
+   $('.share-module .ribbon').click(function(){
+     $('.flyout-share').css({"display": "none"});
+   });
+   
+    //show and hide feedback module
+   $('.feedback-module .btn').click(function(){
+     $('.flyout-feedback').css({"top":"auto", "bottom":"50px", "display": "block"});
+	 $('.flyout-comments').css({"display": "none"});
+	 $('.flyout-share').css({"display": "none"});
+   });
+   $('.feedback-module .ribbon').click(function(){
+     $('.flyout-feedback').css({"display": "none"});
+   });
+   
+   //switch between tabs on share module
+    $('.email-tab').click(function(){
+     $('.social-tab').removeClass('active');
+	 $('.social-pane').removeClass('active');
+	  $('.email-tab').addClass('active');
+	 $('.email-pane').addClass('active');
+   }); 
+  
+   $('.social-tab').click(function(){
+	 $('.email-tab').removeClass('active');
+	 $('.email-pane').removeClass('active');
+	 $('.social-tab').addClass('active'); 
+	 $('.social-pane').addClass('active');
+   });
+ });
+
+</script>
+<!--#include file="ga-include.html" -->
+
+<script src="../assets/js/jquery.scrolldepth.min.js"></script>
+<script>
+jQuery.scrollDepth();
+
+</script>
+</body>
+</html>

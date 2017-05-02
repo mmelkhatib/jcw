@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>John Carroll Weekend 2017</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta property="og:title" content="John Carroll Weekend 2017 Schedule"/>
+        <meta property="og:image" content="http://jcw.georgetown.edu/2017/ui/img/bg1.jpg"/>
+        <meta property="og:site_name" content="John Carroll Weekend 2017"/>
+        <meta
+            property="og:description"
+            content="The Georgetown community converges in Austin, Texas, for a weekend of social, cultural and intellectual engagement. Alumni from around the globe will meet in the City of the Violet Crown to network with fellow Hoyas while exploring the &ldquo;live music capital of the world&rdquo; and taking in the sights, sounds, and tastes of Austin."/>
+        <!-- Adding Assets CSS and JS Files-->
+        <!--  <link rel="stylesheet" href="ui/assets/css/main.css"><link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css"> -->
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <!-- Typekit Libraries -->
+        <!--<script type="text/javascript" src="//use.typekit.net/xrm4bqk.js"></script>
+        <script type="text/javascript">
+            try {
+                Typekit.load();
+            } catch (e) {}
+        </script>-->
+        <!--<script src="../assets/js/html5shiv.js"></script>-->
+        <!-- Adding Bootstrap CSS and JS Files -->
+
+        <link rel="stylesheet" href="ui/css/bootstrap.min.css">
+        <link rel="stylesheet" href="ui/css/bootstrap-theme.min.css">
+        <script type="text/javascript" src="ui/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="ui/js/jquery.waypoints.min.js"></script>
+        <!-- Adding custom css and Js files -->
+        <link rel="stylesheet" href="ui/css/styles.css">
+        <!--[if lt IE 9]> <script src="../assets/js/css3-mediaqueries.js"></script> <![endif]-->
+        <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="../assets/css/main-ie.css" /> <![endif]-->
+        <link rel="icon" type="image/gif" href="../assets/img/GUfavicon.gif"/>
+        <script type="text/javascript">
+			setTimeout(function(){var a=document.createElement("script");
+			var b=document.getElementsByTagName("script")[0];
+			a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0033/8143.js?"+Math.floor(new Date().getTime()/3600000);
+			a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+		</script>
+    </head>
+    <body class="home">
+    <!-- Start Main Nav -->
+
+    <div class="navbar-header navbar navbar-fixed-top">
+        <!---END MOBILE NAV--->
+        <p id="guaa-top" class="hidden-md hidden-lg">
+            <img alt="Georgetown University Alumni Association" src="ui/assets/img/GUAA_H_white.png">
+        </p>
+        <a id="menu-toggle" href="#" class="btn btn-lg toggle hidden-md hidden-lg"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+        <!---END MOBILE NAV--->
+        <!---START NAV--->
+        <nav class="navbar-jcw hidden-xs hidden-sm">
+            <ul >
+            <li>
+                <a class="click-disable" href="index.html#hero">Home</a>
+            </li>
+            <li>
+                <a class="click-disable" href="index.html#about">About</a>
+            </li>
+            <li>
+                <a class="click-disable" href="index.html#booking">Accommodations</a>
+            </li>
+            <li>
+                <a class="click-disable" href="index.html#videos">Videos</a>
+            </li>
+            <li>
+                <a class="active" href="#day-toggle">Schedule</a>
+            </li>
+            <li>
+                <a class="click-disable" href="index.html#awardees">Awardees</a>
+            </li>
+            <li>
+                <a class="click-disable" target="_blank" href="http://www.cvent.com/d/jvqx3n">Register</a>
+            </li>
+        </ul>
+        </nav>
+        <!--- END NAV --->
+    </div>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+            <li class="sidebar-brand">
+                <a href="#hero" onclick=$("#menu-close").click();>Home</a>
+            </li>
+
+            <li>
+                <a class="click-disable" href="index.html#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+            <li>
+                <a class="click-disable"  href="index.html#booking" onclick=$("#menu-close").click();>Accommodations</a>
+            </li>
+            <li>
+                <a class="click-disable"  href="index.html#videos" onclick=$("#menu-close").click();>Videos</a>
+            </li>
+            <li>
+                <a class="active" href="index.html#schedule" onclick=$("#menu-close").click();>Schedule</a>
+            </li>
+            <li>
+                <a class="click-disable" href="index.html#awardees" onclick=$("#menu-close").click();>Awardees</a>
+            </li>
+            <li>
+                <a class="click-disable" target="_blank" onclick=$("#menu-close").click(); href="http://www.cvent.com/d/jvqx3n">Register</a>
+            </li>
+            <!--<li>
+                <a href="#" class="disabled">Register</a>
+            </li>-->
+        </ul>
+    </nav>
+    <!-- End Main Nav -->
+
+    <!-- Start Hero -->
+    <section id="hero">
+        <div id="jcw-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class= "item item-1"></div>
+                <div class="item item-2 active"></div>
+                <div class="item item-3"></div>
+            </div>
+		</div>
+        <div id="GUAA" class="hidden-xs hidden-sm"><p><img width="175px" src="../assets/img/GUAA-logo-white.png"></p></div>
+        <div class="row">
+            <div id="logo" class="row row-centered">
+                <div class="col-xs-12 col-sm-6 col-centered">
+                    <img src="ui/img/jcw-austin-logo-w-date.png">
+                    <!--<div class="col-xs-12 col-sm-12 row-centered socialmediabar">
+                        <ul class="clearfix col-centered">
+                            <li>
+                                <a href="#">
+                                    <img src="ui/img/facebookFlatRound-wh-tp.png"></img>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="ui/img/twitterFlatRound-wh-tp.png"></img>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="ui/img/linkedinFlatRound-wh-tp.png"></img>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="ui/img/instagramFlatRound-wh-tp.png"></img>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <!--<div class="alert panel fade in out" role="alert">
+                            <h3>Registration Details are coming soon. Please check back in the Fall for more info</h3>
+                        </div>-->
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Hero -->
+
+    <!-- Start Schedule-->
+    <section id="schedule">
+         <div class="container centered">
+            <div class="col-xs-10 col-sm-8 col-centered">
+                <div class="row centered text-center">
+                    <h1 class="title section-title dark">Signature Events</h1>
+                    <h1 class="star-spacer">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </h1>
+                    <p class="centered">Three renowned Austin venues have been selected for this year's signature events. <a href="http://www.cvent.com/events/john-carroll-weekend-2017/event-summary-197583ad1f9641cfb65182d74c8a1808.aspx" target="_blank">Register</a> for these exciting events today.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row" style="margin-top:20px;">
+                <div class="col-sm-4 text-left">
+                    <img src="ui/img/Driskill_Hotel_Exterior.jpg" class="img-responsive"/>
+                    <h4 class="title">President’s Welcome Reception</h4>
+                    <h6>Thursday, April 20</h6>
+                    <p>The Austin adventure kicks off with an evening reception at the Driskill Hotel. Built in 1886 as the showplace of a cattle baron, The Driskill is regarded as a landmark of legendary Texas hospitality. President John J. DeGioia will welcome members of the Georgetown community to celebrate and reconnect amongst a unique blend of contemporary and historical artwork. Enjoy cocktails and hors d’oeuvres with fellow Hoyas at one of the world’s finest hotels in the center of downtown Austin.</p>
+
+                </div>
+                <div class="col-sm-4 text-left">
+                    <img src="ui/img/Bob_Bullock_Museum.jpg" class="img-responsive"/>
+                    <h4 class="title">Reception at Bullock Texas State History Museum</h4>
+                    <h6>Friday, April 21</h6>
+                    <p>Grab your best jeans and pull on your boots for a casual, Texas-style party at Bullock Texas State History Museum. The beautiful, mosaic-tiled entryway will captivate guests, while the open layout paves the way for a fascinating introduction to Texas’ intriguing narrative. Reconnect with classmates and make new Hoya friends as you enjoy cocktails amidst relics that span centuries and view film and interactive media experiences that represent Texas’ distinctive history.</p>
+
+                </div>
+                <div class="col-sm-4 text-left">
+                    <img src="ui/img/Austin_Long_Center.jpg" class="img-responsive"/>
+                    <h4 class="title">Awards Reception and Banquet at Long Center for the Performing Arts</h4>
+                    <h6>Saturday, April 22</h6>
+                    <p>The highlight of the weekend will be the John Carroll Awards Banquet, a black tie gala that will take place at the acclaimed Long Center, a mecca of performing arts. Enjoy a magnificent meal and unmatched views of the Austin skyline on the iconic City Terrace. After dinner, the Alumni Association will present its highest honor to six alumni and one friend of the university in recognition of their dedication to Georgetown’s mission of service and leadership.</p>
+
+                </div>
+
+            </div>
+        </div>
+
+<div id="full-schedule" class="row container-fluid">
+            <nav class="container-fluid" id="day-toggle" >
+                <div class="container">
+                    <a href="#thursday-wrapper" class="col-xs-3"><span class="visible-xs">Thur</span><span class="hidden-xs">Thursday</span></a>
+                    <a href="#friday-wrapper" class="col-xs-3 "><span class="visible-xs">Fri</span><span class="hidden-xs">Friday</span></a>
+                    <a href="#saturday-wrapper" class="col-xs-3"><span class="visible-xs">Sat</span><span class="hidden-xs">Saturday</span></a>
+                    <a href="#sunday-wrapper" class="col-xs-3"><span class="visible-xs">Sun</span><span class="hidden-xs">Sunday</span></a>
+                </div>
+        	</nav>
+        <main>
+
+
+
+            <section id="thursday-wrapper" class="day-container container-fluid">
+              <div class="quicktip-wrapper">
+                            <div id="quicktip" class="quicktip panel panel-default"><button type="button" class="close"
+                            data-target="#quicktip"
+                            data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                            </button><div class="panel-heading">Quick Tip</div><div class="panel-body">Click on the event name or arrow (∨) to expand and view the full description"</div>
+                            </div>
+                            <div id="preEvent" class="quicktip panel panel-default"><button type="button" class="close" data-target="#preEvent" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                            </button>
+                            <div class="panel-heading"><strong>Pre-session:<br> "What I've Learned at the Poker Table" - MSB Reception and Discussion"</strong></div>
+                            <div class="description panel-body"><strong><p>Four Seasons Hotel Austin<br>Wed, April 19, 2017
+                            <br>6:30 - 8:30 p.m.</p>
+                            <p>RSVP to this pre-weekend event <a target="_blank" href="https://georgetownmsb.secure.force.com/pmtx/evt__QuickEvent?id=a2040000004cY1m">here</a></strong></p>
+                      <p>Join the McDonough School of Business and Rohan Williamson (Parent,’14’18), interim dean of the McDonough School of Business on for a special event on Wednesday, April 19.</p>
+                    </div></div>
+                  </div>
+              <div class="odd overlay"></div>
+
+              <div class="container" id="thursday">
+        <div class="container date-header">
+  </a><h3>Thursday, April 20</h3></div>
+ <div class="row labels">
+
+
+  <div class="row labels">
+
+            	<div class="col-md-2">
+                Time
+                </div>
+                <div class="col-sm-6">
+                Event
+                </div>
+                <div class="col-sm-3">
+                Location
+                </div>
+                <div class="col-sm-1">
+                Price
+           		</div>
+            </div>
+          </div>
+
+        </section>
+                <section id="friday-wrapper" class="day-container container-fluid">
+                  <div class="even overlay"></div>
+        <div class="container" id="friday">
+        <div class="container date-header"><h3>Friday, April 21</h3></div>
+        	<div class="row labels">
+                <div class="col-sm-2">
+                Time
+                </div>
+                <div class="col-sm-6">
+                Event
+                </div>
+                <div class="col-sm-3">
+                Location
+                </div>
+                <div class="col-sm-1">
+                Price
+                </div>
+            </div>
+          </div>
+        </section>
+        <section id="saturday-wrapper" class="day-container container-fluid">
+          <div class="odd overlay"></div>
+          <div id="saturday" class="container">
+        <div class="container date-header"><h3>Saturday, April 22</h3></div>
+        <div class="row labels">
+            <div class="col-sm-2">
+            Time
+            </div>
+            <div class="col-sm-6">
+            Event
+            </div>
+            <div class="col-sm-3">
+            Location
+            </div>
+            <div class="col-sm-1">
+           	Price
+        	</div>
+        </div>
+      </div>
+        </section>
+
+        <section id="sunday-wrapper" class="day-container container-fluid">
+          <div class="even overlay"></div>
+        <div id="sunday" class="container">
+          <div class="container date-header"><h3>Sunday, April 23</h3></div>
+          <div class="row labels">
+              <div class="col-sm-2">
+              Time
+              </div>
+              <div class="col-sm-6">
+              Event
+              </div>
+              <div class="col-sm-3">
+              Location
+              </div>
+              <div class="col-sm-1">
+             	Price
+          	</div>
+          </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+  </div>
+
+	<!-- End Schedule  -->
+
+    <!-- End Awardees -->
+
+    <footer >
+        <div class="container-fluid centered">
+            <div class="row text-center">
+                <div class="row">
+                  <p>If you have any questions, please contact us at <a href="mailto:advancementevents@georgetown.edu" target="_blank">advancementevents@georgetown.edu.</a></p>
+                </div>
+                <div class="row" style="margin:30px auto;">
+                  <div class="col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
+                      <p>© 2016 Georgetown University</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <a href="" data-toggle="modal" data-target="#volunteer">Volunteer Toolkit</a>
+                    </div>
+                </div>
+
+                <!--<div class="col-xs-12 col-sm-12 row-centered socialmediabar">
+                    <ul class="clearfix col-centered">
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="ui/img/twitterFlatRound-wh-tp.png"></img>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="ui/img/linkedinFlatRound-wh-tp.png"></img>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="ui/img/instagramFlatRound-wh-tp.png"></img>
+                            </a>
+                        </li>
+                    </ul>
+              </div>-->
+
+            </div>
+        </div>
+    </footer>
+    <!--end Footer -->
+
+    <script src="http://www.youtube.com/player_api"></script>
+    <script src="ui/js/app.js"></script>
+        <script src="ui/js/schedule.js"></script>
+    <!--#include file="ga-include.html" -->
+    </body>
+</html>

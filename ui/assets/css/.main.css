@@ -1,0 +1,70 @@
+/* CSS Document */
+html, body, p, ul, li, h1, h2, h3, h4, h5, h6, form, input, textarea, blockquote{
+	margin:0px; padding:0px;
+	}
+html{height:100%;}
+body{height:100%; font-family:Arial, Helvetica, sans-serif;}
+.home section#main{height:auto!important; min-height:100%; height:100%;
+position:relative; overflow:auto;}
+
+.home.w960 section#main {height: auto; width:960px!important; margin:0 auto; overflow:visible;}
+
+.home section#main nav#topNav{background:#002147; width:100%; height:40px;
+position:absolute; z-index:1;
+color: #FFF;}
+.home section#main nav#btmNav{background:#002147; width:100%; height:40px;
+position:absolute; bottom:0px;
+color:#FFF;}
+
+.home section#main section#menu{width:40%; min-width: 350px; max-width:450px; height:100%; 
+/*position: absolute; z-index:0;*/
+margin-top:0px;
+float:left; padding-bottom:0px;background:#fff;}
+.home section#main section#menu div{margin-left:20px; background:#fff; opacity:.9; padding:20px; }
+
+.home section#menu nav#primaryNav{background:none; 
+font-size:16px; margin-top:40px; }
+.home section#main .seal{margin-top:40px;}
+
+.home #primaryNav li{margin-bottom:.5em}
+.home section#menu img{}
+
+.home section#main section#content{width:60%; float:left;}
+.home.w960 section#main section#content{background:#FFF; height:100%;}
+.home section#main section#content > div{background: #FFF; opacity:.8; margin:20px; margin-top:60px; margin-bottom:60px; padding:20px;}
+#bgSS {position:absolute; margin:0px; padding:0px; height:100%;}
+#bgSS img {height:100%;}
+.w960 #bgSS{width:100%;}
+.w960 #bgSS img{width:100%;}
+
+.home .horizMenu{margin-left:20px; list-style:none;}
+.home .horizMenu li{float:left; margin-right:2em; line-height:40px;}
+
+
+/*///////////////////////////SUBPAGE////////////////////////////////////////*/
+.subpage section#main{background: url(../img/street.jpg) no-repeat center center fixed; background-size:cover; height:auto!important; min-height:100%; height:100%;
+position:relative; overflow:hidden;}
+
+.subpage section#main nav#topNav{background:#002147; width:100%; height:40px;
+position:absolute; z-index:1;
+color: #FFF;}
+.subpage section#main nav#btmNav{background:#002147; width:100%; height:40px;
+position:absolute; bottom:0px;
+color:#FFF;}
+
+.subpage section#main section#menu{width:40%; height:auto; 
+/*position: absolute; z-index:0;*/
+margin-top:60px;
+float:left; padding-bottom:0px;}
+.subpage section#main section#menu div{margin-left:20px; background:#fff; opacity:.9; padding:20px; }
+
+.subpage section#menu nav#primaryNav{background:none; 
+font-size:16px; }
+.subpage #primaryNav li{margin-bottom:.5em}
+.subpage section#menu img{}
+
+.subpage section#main section#content{margin-left:40%; width:60%;}
+.subpage section#main section#content > div{background: #FFF; opacity:.8; margin:20px; margin-top:60px; margin-bottom:60px; padding:20px;}
+
+.subpage .horizMenu{margin-left:20px; list-style:none;}
+.subpage .horizMenu li{float:left; margin-right:2em; line-height:40px;}

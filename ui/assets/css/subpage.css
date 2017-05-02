@@ -1,0 +1,186 @@
+/* CSS Document */
+html, body, p, ul, li, h1, h2, h3, h4, h5, h6, form, input, textarea, blockquote{
+	margin:0px; padding:0px;
+	}
+html{height:100%;}
+body{height:100%; background: url(../img/953.png); font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+.home section#main{
+position:relative; overflow:auto;height:auto!important;}
+
+.home.w960 section#main { overflow:visible; margin:0 auto; width:960px!important;height: auto; background:rgba(255,255,255,.9);}
+
+.home section#main nav#topNav{
+position:relative; z-index:1; width:100%; height:40px; background:#002147; text-transform:uppercase;
+color: #FFF;}
+.home section#main nav#btmNav{
+position:relative; bottom:0px; clear:both; width:100%; height:40px;background:#002147; text-transform:uppercase;
+color:#FFF;}
+
+.home section#main section#menu{
+/* position: absolute; */
+/* z-index:0; */
+float:left; text-transform:uppercase;
+margin-top:0px; padding-bottom:0px; min-width: 300px; width:35%}
+.home section#main section#menu div{margin:20px 0; }
+
+
+.home section#menu nav#primaryNav{background:none; 
+font-size:16px; }
+.home section#menu nav#primaryNav ul { margin-left:150px;list-style:none;}
+.home section#main .seal{display:block; opacity:1; -webkit-transition:opacity 2s linear; }
+ 
+.home #primaryNav li{margin-bottom:.5em; font-size:14px; line-height:1.5em; color:#8D817B;}
+.home section#menu nav#primaryNav .regBtn {
+  background: none repeat scroll 0 0 #002147;
+  border: medium none;
+  box-shadow: 0 3px 3px rgba(50, 50, 50, 0.5);
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-size: 10px;
+  margin: 0 10px 0 0;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 95%;
+}
+.home section#menu img{ }
+
+.home section#main section#content{ float:right;width:65%; min-height:85%;}
+.home.w960 section#main section#content{margin-bottom:30px;}
+.home section#main section#content > div{margin:20px 0;}
+.home section#main section#content > div p{ margin-bottom:1em;}
+#bgSS {position:fixed; margin:0px; padding:0px; width:100%; height:100vh;}
+#bgSS img {height:100%;}
+.w960 #bgSS{width:100%;}
+.w960 #bgSS img{width:100%; height:100vh;}
+
+.home .horizMenu{list-style:none;
+width: 700px;
+height: 40px;
+margin: 0 auto;}
+.home .horizMenu li{float:left; margin-left:0; width:100px; text-align:center; line-height:40px;}
+.hotel {
+    float: left;
+    margin-bottom: 60px;
+}
+.hotelBox {
+    margin: 10px 0 0;
+    float: left;
+    background-color: rgba(198,188,182,.5);
+    padding: 20px;
+}
+h1 {font-size: 24px; color:#002147; margin-bottom:1em;}
+h3 {font-size: 16px; color:#002147;}
+
+.innerPad {padding:0px 20px;}
+#menu .innerPad {padding:0 0 0 20px;}
+.listDiamond {list-style: inside disc; font-weight:bold; }
+ul.listDiamond li:first-child {margin-top:1em; }
+ul.listDiamond li {font-weight:normal;}
+.important {color:red; font-weight:bold;}
+.center {margin:0 auto; display:block;}
+nav a:link {text-decoration:none;}
+nav#topNav a:link {color:#FFF;}
+nav#topNav a:visited {color:#FFF;}
+nav#topNav a:hover {color:#AFCCF2; text-decoration:underline;}
+nav#primaryNav  a:link {color:#002147;}
+nav#primaryNav  a:visited {color:#002147;}
+nav#primaryNav  a:hover {color:#999; border-left: 5px solid rgba(144,144,144,.5); padding-left: 3px;}
+.rooms {width:100%; margin: 20px auto 10px;}
+/*Schedule styles*/
+p#schedule-nav {margin: 10px auto 0!important; float:left; width:100%;}
+.schedule {padding:20px;}
+.day {   
+ 	float: left;
+    width: 25%;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #cccccc;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 5px 7px rgba(50, 50, 50, 0.33);
+    min-height: 50px;
+ }
+.day:hover {background-color:#eeeeee;}
+.day.active {background-color:#AFCCF2;}
+.day a:link, .day a:visited {text-decoration: none; color:#002147;}
+.event {margin: 20px auto; border-bottom:1px solid #CCCCCC;}
+#schedule h2 {color: #FFFFFF; background: #002147; padding-left:10px; line-height:40px; height:40px; border-top-right-radius: 20px; /*border-bottom-right-radius: 20px;*/  margin-bottom:.5em; text-transform:uppercase;}
+#schedule h2:hover {cursor:pointer;}
+#schedule div {background: #AFCCF2; margin-bottom:0px; -webkit-box-shadow: 0px 5px 7px RGBa(50,50,50,.33); text-shadow:1px 1px rgba(255,255,255,.33); position:relative; z-index:5; float:left; width:100%;margin-bottom:1em; box-shadow: 0 5px 7px rgba(50, 50, 50, 0.33);}
+#schedule div h3 {padding:20px 10px 5px; float:left;}
+#schedule .time {font-size: 12px; font-weight:bold; text-shadow:1px 1px rgba(255,255,255,.33);}
+#schedule div p {margin: 0; padding:0 10px 10px; clear:both; line-height:1.3em;}
+#schedule .signup {
+	padding: .5em 1em; text-shadow:none; background: #002147; color: white; text-decoration: none; border-radius: 20px;
+}
+.newness,.openness,.speakerupdateness,.waitlistness {
+		width:40px;
+		padding: 3px!important;
+		border-radius: 5px;
+		line-height: 12px;
+		font-size: 12px;
+		font-weight: bold;
+		color:white;  text-transform:uppercase;
+		text-align:center;
+		display: block;
+		clear: both;
+		margin: 0px 10px 6px!important;
+		-webkit-box-shadow: 0px 1px 3px RGBa(50,50,50,.33);}
+#schedule .newness {
+	text-shadow: 1px 1px #770;
+	background: gold;
+}		
+/*#schedule span.newness::after{content:"NEW";}*/
+#schedule .openness{
+		text-shadow: 1px 1px #004990;
+		background: #36C;}
+#schedule .speakerupdateness {
+		text-shadow: 1px 1px #004990;
+		background: #679146;
+		width:120px;}
+#schedule .waitlistness {
+		text-shadow: 1px 1px #333;
+		background: #cec6c0;
+		width:70px;}
+
+.print-module {display:none;}
+.utility-bar {display:none;}
+table#roomrates th, table#roomrates td {text-align:left;}
+
+@media screen and (max-width:960px){
+.home .horizMenu {width:100%;}
+.home section#main #menu .seal{display:none; opacity:0; /*-webkit-transition:opacity 2s linear;*/}
+.home.w960 section#main { width:100%!important;height: auto; background:rgba(255,255,255,.9);}
+.home section#main nav#topNav{
+position:relative; z-index:1; width:100%; height:40px; background:#002147; margin-bottom:10px;
+color: #FFF; overflow:visible;}
+.home section#main nav#topNav ul li {
+	position:relative; width:100%; background: #002147; text-align:center;	margin-left:0px;	
+
+	}
+.home section#menu nav#primaryNav {width:100%; text-align:center; text-transform:uppercase; clear:both;}
+.home section#menu nav#primaryNav ul {width:95%; margin:0 auto; overflow:hidden;}
+.home section#menu nav#primaryNav ul li {width:50%; float:left; line-height:24px;}
+.home section#menu nav#primaryNav ul li:last-child {width:100%; clear:both; margin-top:1em;}
+.home section#menu nav#primaryNav li .regBtn {padding:5px; text-transform:uppercase; font-size:10px; width:auto; margin:0 auto;}
+
+.home section#main section#content {
+	width:95%; font-size: 14px; margin:0 auto; margin-bottom:40px; float:none;
+}
+.home .horizMenu li{float:left; margin-left:5%; width:auto; text-align:center; line-height:40px;}
+.home section#main section#menu {width:100%;}
+.home section#main section#content > div {
+	margin:0px;	
+}
+.innerPad {padding:0px 10px;}
+#menu .innerPad {padding:0;}
+nav#primaryNav  a:hover {color:#999; border-left: none; border-bottom: 5px solid rgba(144,144,144,.5); padding-left: 0px; padding-bottom: 3px;}
+nav#primaryNav  a.noline:hover {border:none!important;}
+
+.day {font-size: 16px;}
+}
+@media screen and (max-width: 480px){
+#schedule .newness, #schedule .openness, #schedule .speakerupdateness{bottom:0; right:0}
+} 
